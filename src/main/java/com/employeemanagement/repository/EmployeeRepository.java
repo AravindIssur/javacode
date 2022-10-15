@@ -1,0 +1,16 @@
+package com.employeemanagement.repository;
+
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.employeemanagement.entity.Employee;
+ 
+
+@Repository
+public interface EmployeeRepository extends JpaRepository< Employee , Integer> {
+
+	public Employee findByEmail(String emailId);
+	public Employee findByEmailAndPassword(String emailId, String password);
+}
